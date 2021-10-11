@@ -12,9 +12,10 @@ app.get('/',(req,res)=>{
             res.write("error");
         }
         else{
-            res.write(data);
-            var query=url.parse(req.url).query;
+    var query=url.parse(req.url).query;
     var n=querystring.parse(query)["number"];
+    res.write(data);
+    
     console.log(n);
     res.write("<h5>The url of page is : "+req.url+"</h5>");
     res.write("<h5>method : get</h5>");
