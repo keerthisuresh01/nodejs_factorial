@@ -13,20 +13,17 @@ app.get('/',(req,res)=>{
         }
         else{
             res.write(data);
+            var query=url.parse(req.url).query;
+    var n=querystring.parse(query)["number"];
+    console.log(n);
+    res.write("<h5>The url of page is : "+req.url+"</h5>");
+    res.write("<h5>method : get</h5>");
+    res.write("<h5>The entered number is "+n+"</h5>");
+    res.end();
            
         }
     })
 })
-app.get('/fac?number=',(req,res)=>{
-    var query=url.parse(req.url).query;
-    var n=querystring.parse(query)["number"];
-    console.log(n);
-    res.write("<h1>The url of page is : "+req.url+"</h1>");
-    res.write("<h1>method : get</h1>");
-    res.write("<h1>The entered number is "+n+"</h1>");
-    res.end();
-})
-
 
 
 app.listen(PORT);
