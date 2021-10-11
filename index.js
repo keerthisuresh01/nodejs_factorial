@@ -12,18 +12,21 @@ app.get('/',(req,res)=>{
             res.write("error");
         }
         else{
-    var query=url.parse(req.url).query;
-    var n=querystring.parse(query)["number"];
+    
     res.write(data);
     
+        }
+    })
+})
+app.get('/fac',(req,res)=>{
+    var query=url.parse(req.url).query;
+    var n=querystring.parse(query)["number"];
     console.log(n);
     res.write("<h5>The url of page is : "+req.url+"</h5>");
     res.write("<h5>method : get</h5>");
     res.write("<h5>The entered number is "+n+"</h5>");
     res.end();
            
-        }
-    })
 })
 
 
