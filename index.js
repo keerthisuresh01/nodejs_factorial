@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
         }
     })
 })
-app.get('/fac',(req,res)=>{
+app.get('/fac?number=',(req,res)=>{
     var query=url.parse(req.url).query;
     var n=querystring.parse(query)["number"];
     console.log(n);
