@@ -12,24 +12,10 @@ app.get('/',(req,res)=>{
             res.write("error");
         }
         else{
-            var query=url.parse(req.url).query;
-      var n=querystring.parse(query)["number"];
-    
-        res.write(data);
-        res.write("<h5>The url of page is : "+req.url+"</h5>");
-            res.write("<h5>method : get</h5>");
-          res.write("<h5>The entered number is "+n+"</h5>");
-           res.end();
+            res.write(data);
+            res.end();
         }
-    })
-})
-// app.get('/fac',(req,res)=>{
-//     
-//     console.log(n);
-//    
-           
-// })
-
-
+    });
+});
 app.listen(PORT);
 console.log(PORT);
